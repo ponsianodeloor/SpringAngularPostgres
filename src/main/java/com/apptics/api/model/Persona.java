@@ -12,7 +12,7 @@ public class Persona {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	private String nombre;
 	private String apellido;
 	private int edad;
@@ -27,6 +27,23 @@ public class Persona {
 	public Persona() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Persona(String nombre, String apellido, int edad, Pais pais, Provincia provincia) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+		this.pais = pais;
+		this.provincia = provincia;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -68,6 +85,7 @@ public class Persona {
 	public void setProvincia(Provincia provincia) {
 		this.provincia = provincia;
 	}
+
 	
 
 }

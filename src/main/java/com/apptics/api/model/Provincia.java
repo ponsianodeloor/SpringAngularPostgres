@@ -11,7 +11,7 @@ public class Provincia {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@ManyToOne
 	@JoinColumn(name="pais_id")
@@ -22,6 +22,20 @@ public class Provincia {
 	public Provincia() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Provincia(Pais pais, String provincia) {
+		super();
+		this.pais = pais;
+		this.provincia = provincia;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Pais getPais() {
@@ -39,5 +53,7 @@ public class Provincia {
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
+	
+	
 
 }

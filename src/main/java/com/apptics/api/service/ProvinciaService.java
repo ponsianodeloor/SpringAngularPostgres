@@ -1,9 +1,11 @@
 package com.apptics.api.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +19,19 @@ import com.apptics.api.repository.ProvinciaRepository;
 @Service
 public class ProvinciaService implements ProvinciaRepository {
 
+	@Autowired
 	private ProvinciaRepository provinciaRepository;
+	
+	public List<Provincia> findAllByPais (Long id){
+		List<Provincia> provinciasRespuesta= new ArrayList<>();
+		List<Provincia> provincias= provinciaRepository.findAll();
+		for (int i=0; i<provincias.size(); i++) {
+			if (provincias.get(i).getPais().getId()==id) {
+				provinciasRespuesta.add(provincias.get(i));
+			}
+		}
+		return provinciasRespuesta;
+	}
 
 	@Override
 	public void flush() {
@@ -94,6 +108,10 @@ public class ProvinciaService implements ProvinciaRepository {
 	@Override
 	public List<Provincia> findAll() {
 		return provinciaRepository.findAll();
+	}
+	
+	public List<Provincia> findAllByPaisId(int paisId) {
+		return provinciaRepository.findBy(null, null);
 	}
 
 	@Override
