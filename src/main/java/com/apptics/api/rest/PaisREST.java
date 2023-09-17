@@ -12,7 +12,7 @@ import com.apptics.api.model.Pais;
 import com.apptics.api.service.PaisService;
 
 @RestController
-@RequestMapping("/pais/")
+@RequestMapping("/paises/")
 public class PaisREST {
 
 	@Autowired

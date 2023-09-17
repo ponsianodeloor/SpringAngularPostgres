@@ -13,7 +13,7 @@ import com.apptics.api.model.Provincia;
 import com.apptics.api.service.ProvinciaService;
 
 @RestController
-@RequestMapping("/provincia/")
+@RequestMapping("/provincias/")
 public class ProvinciaREST {
 
 	@Autowired
@@ -23,7 +23,7 @@ public class ProvinciaREST {
 	private ResponseEntity<List<Provincia>> getAllProvincias(){
 		return ResponseEntity.ok(provinciaService.findAll());
 	}
-	
+	 
 	@GetMapping ("{id}")
 	private ResponseEntity<List<Provincia>> getAllProvinciasByPais (@PathVariable("id") Long paisId){
 		return ResponseEntity.ok(provinciaService.findAllByPais(paisId));
