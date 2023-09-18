@@ -18,10 +18,10 @@ public class Persona {
 	private int edad;
 	
 	@ManyToOne
-	@JoinColumn(name="pais_id")
+	@JoinColumn(name="id_pais")
 	private Pais pais;
 	@ManyToOne
-	@JoinColumn(name="provincia_id")
+	@JoinColumn(name="id_provincia")
 	private Provincia provincia;
 	
 	public Persona() {

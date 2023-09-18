@@ -16,7 +16,7 @@ import com.apptics.api.model.Persona;
 import com.apptics.api.service.PersonaService;
 
 @RestController
-@RequestMapping("/personas")
+@RequestMapping("/personas/")
 public class PersonaREST {
 	
 	@Autowired
@@ -27,15 +27,14 @@ public class PersonaREST {
 		return ResponseEntity.ok(personaService.findAll());
 	}
 	
-	@PostMapping
-	private ResponseEntity<Persona> savePersona(@RequestBody Persona persona){
+	@PostMapping(path="new", consumes = "application/json", produces = "application/json")
+	private ResponseEntity<Persona> savePersona (@RequestBody Persona persona){
 		try {
-			Persona personaNueva = personaService.save(persona);
-			return ResponseEntity.created(new URI("/personas/" + personaNueva.getId())).body(personaNueva);
+			Persona personaGuardada = personaService.save(persona);		
+		return ResponseEntity.created(new URI("/personas/"+personaGuardada.getId())).body(personaGuardada);
 		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build(); 
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
-		
 	}
 	
   

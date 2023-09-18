@@ -14,7 +14,7 @@ public class Provincia {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name="pais_id")
+	@JoinColumn(name="id_pais")
 	private Pais pais;
 	
 	private String provincia;
