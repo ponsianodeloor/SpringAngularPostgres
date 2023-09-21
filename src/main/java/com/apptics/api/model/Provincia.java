@@ -20,12 +20,10 @@ public class Provincia {
 	private String provincia;
 
 	public Provincia() {
-		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public Provincia(Pais pais, String provincia) {
-		super();
 		this.pais = pais;
 		this.provincia = provincia;
 	}

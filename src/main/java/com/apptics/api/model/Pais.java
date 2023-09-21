@@ -14,12 +14,10 @@ public class Pais {
 	private String pais;
 	
 	public Pais() {
-		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Pais(String pais) {
-		super();
 		this.pais = pais;
 	}
 
@@ -38,5 +36,9 @@ public class Pais {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
+	
+	
+	
+	
 	
 }
